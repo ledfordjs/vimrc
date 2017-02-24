@@ -1,5 +1,6 @@
 call pathogen#infect()
 syntax on
+:imap jj <Esc>
 colorscheme darkglass
 set number
 set showcmd
