@@ -1,0 +1,43 @@
+"Install
+" pathogen - https://github.com/tpope/vim-pathogen
+" vim-javascript - git clone https://github.com/pangloss/vim-javascript.git ~/.vim/bundle/vim-javascript
+" syntastic - git clone https://github.com/vim-syntastic/syntastic.git
+" ctrlp - git clone https://github.com/ctrlpvim/ctrlp.vim.git
+call pathogen#infect()
+syntax on
+:imap jj <Esc>
+colorscheme lyla 
+set encoding=utf-8
+set number
+set showcmd
+set tabstop=4 shiftwidth=4 expandtab
+filetype indent on
+set list
+set listchars=tab:.\ ,eol:¬
+set noswapfile
+let mapleader=","
+let NERDTreeShowHidden=1
+map <leader>t :NERDTreeToggle<CR>
+map <leader>T :NERDTreeFocusToggle<CR>
+map <leader>n :tabn<CR>
+map <leader>N :tabp<CR>
+map <leader>r :NERDTreeFind<cr>
+Plug 'airblade/vim-gitgutter'
+
+" Vim-javascript configuration variables
+" https://github.com/pangloss/vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_ngdoc = 1
+let g:javascript_plugin_flow = 1
+set foldmethod=syntax
+
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
+"Powerline tool setup https://blog.codefront.net/2013/10/27/installing-powerline-on-os-x-homebrew/
+source /Users/ledfordjs/Library/Python/2.7/lib/python/site-packages/powerline/bindings/vim/plugin/powerline.vim
+set laststatus=2
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+call vundle#end()
+"execute pathogen#infect()
